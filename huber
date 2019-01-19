@@ -1,0 +1,48 @@
+--Punto 1
+
+data Chofer = Chofer { 
+nombre :: String,
+km :: Int,
+viajes :: [Viaje],
+condicion :: Condicion
+}
+
+data Viaje = Viaje {
+fecha :: Int,
+cliente :: Cliente,
+costo :: Int
+}
+
+data Cliente = Cliente {
+nombreCliente :: Strin,
+lugar :: String
+}
+
+
+--Punto 2
+
+
+tomarCualquierViaje :: Condicion
+tomarCualquierViaje _ = true
+
+viajesDeMasDe200 :: Condicion
+viajesDeMasDe200 = (>200).costo
+
+clienteNombreLargo :: Int -> Condicion
+clienteNombreLargo n :: (>n).lenght.nombreCliente.cliente
+
+zonaDeterminada :: String -> Condicion
+zonaDeterminada zona = ( /= zona).lugar.cliente
+
+
+--Punto 3
+
+lucas :: Cliente
+lucas = "Lucas" "Victoria"
+
+daniel :: Chofer
+daniel = "Daniel" 23500 [Viaje 20170420 150] (zonaDeterminada "Olivos") 
+
+alejandra :: Chofer
+alejandra = "Alejandra" 180000 [] cualquierViaje
+
